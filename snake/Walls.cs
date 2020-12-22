@@ -6,18 +6,18 @@ namespace snake
 {
     class Walls
     {
-        private List<Line> walls;
+        private List<SymbolicEntity> walls;
 
         public Walls(int mapWidth, int mapHeight)
         {
-            walls = new List<Line>();
+            walls = new List<SymbolicEntity>();
             walls.Add(new VerticalLine(1, mapHeight - 1, 1, '|'));
             walls.Add(new VerticalLine(1, mapHeight - 1, mapWidth - 1, '|'));
             walls.Add(new HorizontalLine(1, mapWidth - 1, 0, '-'));
             walls.Add(new HorizontalLine(1, mapWidth - 1, mapHeight - 1, '-'));
         }
 
-        public bool Collision(Line line)
+        public bool Collision(SymbolicEntity line)
         {
             foreach (var wall in walls)
             {
@@ -29,7 +29,7 @@ namespace snake
 
         public void Draw()
         {
-            foreach (Line line in walls)
+            foreach (SymbolicEntity line in walls)
             {
                 line.Draw();
             }

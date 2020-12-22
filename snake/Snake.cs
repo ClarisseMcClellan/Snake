@@ -4,7 +4,7 @@ using System.Text;
 
 namespace snake
 {
-    class Snake : Line
+    class Snake : SymbolicEntity
     {
         public int Lenth { get { return points.Count; } }
         public Direction Direction { get; private set; } 

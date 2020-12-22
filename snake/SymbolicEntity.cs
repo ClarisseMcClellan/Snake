@@ -4,7 +4,7 @@ using System.Text;
 
 namespace snake
 {
-    class Line
+    class SymbolicEntity
     {
         protected List<Point> points;
 
@@ -14,11 +14,11 @@ namespace snake
                 p.Draw();
         }
 
-        internal  bool Collision(Line line)
+        internal  bool Collision(SymbolicEntity entity)
         {
             foreach (Point p in points)
             {
-                if (line.Collision(p))
+                if (entity.Collision(p))
                     return true;
             }
             return false;

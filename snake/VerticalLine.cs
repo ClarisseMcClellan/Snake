@@ -4,7 +4,7 @@ using System.Text;
 
 namespace snake
 {
-    class VerticalLine : Line
+    class VerticalLine : SymbolicEntity
     {
         public VerticalLine(int yTop, int yDown, int x, char sym)
         {

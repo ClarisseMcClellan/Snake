@@ -6,27 +6,27 @@ namespace snake
 {
     class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int PositionLeft { get; set; }
+        public int PositionTop { get; set; }
         public char Symbol { get; set; }
 
         public Point() { }
-
+        
         public Point(int x, int y, char sym)
         {
-            X = x;
-            Y = y;
+            PositionLeft = x;
+            PositionTop = y;
             Symbol = sym;
         }
 
         public Point (Point p)
         {
-            X = p.X;
-            Y = p.Y;
+            PositionLeft = p.PositionLeft;
+            PositionTop = p.PositionTop;
             Symbol = p.Symbol;
         }
 
-        public bool Collision(Point point) => X == point.X && Y == point.Y;
+        public bool Collision(Point point) => PositionLeft == point.PositionLeft && PositionTop == point.PositionTop;
         public void Clear()
         {
             Symbol = ' ';
@@ -37,15 +37,15 @@ namespace snake
         {
             switch ((int)direction)
             {
-                case 0: { X += offset; break; }
-                case 1: { X -= offset; break; }
-                case 2: { Y -= offset; break; }
-                case 3: { Y += offset; break; }
+                case 0: { PositionLeft += offset; break; }
+                case 1: { PositionLeft -= offset; break; }
+                case 2: { PositionTop -= offset; break; }
+                case 3: { PositionTop += offset; break; }
             }
         }
         public void Draw()
         {
-            Console.SetCursorPosition(X, Y);
+            Console.SetCursorPosition(PositionLeft, PositionTop);
             Console.Write(Symbol);
         }
     }
