@@ -12,10 +12,10 @@ namespace snake
 
         public Point() { }
         
-        public Point(int x, int y, char sym)
+        public Point(int positionLeft, int positionTop, char sym)
         {
-            PositionLeft = x;
-            PositionTop = y;
+            PositionLeft = positionLeft;
+            PositionTop = positionTop;
             Symbol = sym;
         }
 

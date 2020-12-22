@@ -21,10 +21,10 @@ namespace snake
 
         public Point CreateFood()
         {
-            int x = random.Next(2, mapWidth - 1);
-            int y = random.Next(2, mapHeight - 1);
-            int symID = random.Next(symbol.Length);
-            Point food = new Point(x, y, symbol[symID]);
+            int positionLeft = random.Next(2, mapWidth - 1);
+            int positionTop = random.Next(2, mapHeight - 1);
+            int foodSymbolID = random.Next(symbol.Length);
+            Point food = new Point(positionLeft, positionTop, symbol[foodSymbolID]);
             return food;
         }
     }

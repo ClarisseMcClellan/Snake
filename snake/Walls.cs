@@ -17,11 +17,11 @@ namespace snake
             walls.Add(new HorizontalLine(1, mapWidth - 1, mapHeight - 1, '-'));
         }
 
-        public bool Collision(SymbolicEntity line)
+        public bool Collision(SymbolicEntity entity)
         {
             foreach (var wall in walls)
             {
-                if (wall.Collision(line))
+                if (wall.Collision(entity))
                     return true;
             }
             return false;
@@ -29,9 +29,9 @@ namespace snake
 
         public void Draw()
         {
-            foreach (SymbolicEntity line in walls)
+            foreach (SymbolicEntity entity in walls)
             {
-                line.Draw();
+                entity.Draw();
             }
         }
     }
